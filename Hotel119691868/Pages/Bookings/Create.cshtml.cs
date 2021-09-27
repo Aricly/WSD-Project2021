@@ -21,7 +21,7 @@ namespace Hotel119691868.Pages.Bookings
 
         public IActionResult OnGet()
         {
-        ViewData["CustomerEmail"] = new SelectList(_context.Customer, "Email", "Email");
+        //ViewData["CustomerEmail"] = new SelectList(_context.Customer, "Email", "Email");
         ViewData["RoomID"] = new SelectList(_context.Room, "ID", "ID");
             return Page();
         }
