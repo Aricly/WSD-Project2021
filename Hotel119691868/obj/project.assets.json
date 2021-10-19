@@ -9194,11 +9194,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Downloads (F)\\Work\\22041964\\2021T2\\Web Systems Development\\Hotel119691868\\Hotel119691868.csproj",
+      "projectUniqueName": "F:\\Downloads (F)\\Work\\22041964\\2021T2\\Web Systems Development\\WSD-Project2021\\Hotel119691868\\Hotel119691868.csproj",
       "projectName": "Hotel119691868",
-      "projectPath": "F:\\Downloads (F)\\Work\\22041964\\2021T2\\Web Systems Development\\Hotel119691868\\Hotel119691868.csproj",
+      "projectPath": "F:\\Downloads (F)\\Work\\22041964\\2021T2\\Web Systems Development\\WSD-Project2021\\Hotel119691868\\Hotel119691868.csproj",
       "packagesPath": "C:\\Users\\Aricly\\.nuget\\packages\\",
-      "outputPath": "F:\\Downloads (F)\\Work\\22041964\\2021T2\\Web Systems Development\\Hotel119691868\\obj\\",
+      "outputPath": "F:\\Downloads (F)\\Work\\22041964\\2021T2\\Web Systems Development\\WSD-Project2021\\Hotel119691868\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Aricly\\AppData\\Roaming\\NuGet\\NuGet.Config",

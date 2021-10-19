@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Jh1jDq9Ko86SdlvelhPL7BFKsB6S85VbND/w9BkLXZZnhhzxU57hDLYrKkvDiY+JI8Ms1iSyYz7pA825qBLnlg==",
+  "dgSpecHash": "9iUTJGYLWJe4ez59wa2sqN+g9ASE8lWTfCjAQfbQNfpVMTE9E5iO1dal9MkF3xI8XnU8KH3BSjWkRQ+3eMcv2g==",
   "success": true,
-  "projectFilePath": "F:\\Downloads (F)\\Work\\22041964\\2021T2\\Web Systems Development\\Hotel119691868\\Hotel119691868.csproj",
+  "projectFilePath": "F:\\Downloads (F)\\Work\\22041964\\2021T2\\Web Systems Development\\WSD-Project2021\\Hotel119691868\\Hotel119691868.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Aricly\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.15\\microsoft.aspnetcore.cryptography.internal.3.1.15.nupkg.sha512",
     "C:\\Users\\Aricly\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.15\\microsoft.aspnetcore.cryptography.keyderivation.3.1.15.nupkg.sha512",
