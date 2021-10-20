@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Hotel119691868.Data;
 using Hotel119691868.Models;
 using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 namespace Hotel119691868.Pages.Bookings
 {
@@ -44,7 +45,8 @@ namespace Hotel119691868.Pages.Bookings
             }
 
             string _email = User.FindFirst(ClaimTypes.Name).Value;
-            Booking.CustomerEmail = _email;
+            Booking booking1 = await _context.Booking.FirstOrDefaultAsync(m => m.CustomerEmail == _email);
+            //Booking.CustomerEmail = _email;
             
 
             //calculation for booking price
