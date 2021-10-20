@@ -38,6 +38,10 @@ namespace Hotel119691868.Pages.Bookings
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
 
             string _email = User.FindFirst(ClaimTypes.Name).Value;
             Booking.CustomerEmail = _email;
@@ -50,10 +54,7 @@ namespace Hotel119691868.Pages.Bookings
             decimal pricePerNight = room.Price;
             Booking.Cost = amountOfDays * pricePerNight;
 
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            
 
             //raw SQL query for bookings to check for interference with booking dates
             var booking = from b in _context.Booking
