@@ -45,23 +45,23 @@ namespace Hotel119691868.Pages.Bookings
             }
 
             string _email = User.FindFirst(ClaimTypes.Name).Value;
+            Booking.CustomerEmail = _email;
             Booking booking1 = await _context.Booking.FirstOrDefaultAsync(m => m.CustomerEmail == _email);
-            //Booking.CustomerEmail = _email;
-            
 
             //calculation for booking price
             var room = await _context.Room.FindAsync(Booking.RoomID);
 
             int amountOfDays = (int)(Booking.CheckOut - Booking.CheckIn).TotalDays;
             decimal pricePerNight = room.Price;
-            Booking.Cost = amountOfDays * pricePerNight;
-
-            
+            Booking.Cost = amountOfDays * pricePerNight;  
 
             //raw SQL query for bookings to check for interference with booking dates
             var booking = from b in _context.Booking
-                          where (b.CheckIn >= Booking.CheckIn && b.CheckIn <= Booking.CheckOut) ||
-                          (b.CheckOut <= Booking.CheckOut && b.CheckOut >= Booking.CheckIn)
+                          where 
+                          (b.CheckIn >= Booking.CheckIn && b.CheckOut <= Booking.CheckOut) ||
+                          (b.CheckIn <= Booking.CheckOut && b.CheckOut >= Booking.CheckIn)
+                          //(b.CheckIn >= Booking.CheckIn && b.CheckIn <= Booking.CheckOut) ||
+                          //(b.CheckOut <= Booking.CheckOut && b.CheckOut >= Booking.CheckIn)
                           select b.RoomID;
 
             if (booking.Contains(Booking.RoomID))

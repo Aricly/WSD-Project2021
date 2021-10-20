@@ -39,8 +39,6 @@ namespace Hotel119691868.Pages.Bookings
                 .Include(b => b.TheRoom)
                 .Where(b => b.CustomerEmail.Contains(_email));
 
-            
-
             switch (sortOrder)
             {
                 case "checkIn_asc":
