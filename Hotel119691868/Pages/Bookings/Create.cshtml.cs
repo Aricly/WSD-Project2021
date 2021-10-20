@@ -9,9 +9,11 @@ using Hotel119691868.Data;
 using Hotel119691868.Models;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Hotel119691868.Pages.Bookings
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
         public int idle = 0;
