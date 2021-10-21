@@ -22,7 +22,7 @@ namespace Hotel119691868.Models
         public string GivenName { get; set; }
         [Required]
         [RegularExpression(@"[0-9]{4}", ErrorMessage = "Postcode number must be 4 digits.")]
-        public int Postcode { get; set; }
+        public string Postcode { get; set; }
         public ICollection<Booking> TheBookings { get; set; }
     }
 }
