@@ -10,6 +10,7 @@ using Hotel119691868.Models;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Data.Sqlite;
 
 namespace Hotel119691868.Pages.Bookings
 {
@@ -57,22 +58,21 @@ namespace Hotel119691868.Pages.Bookings
             decimal pricePerNight = room.Price;
             Booking.Cost = amountOfDays * pricePerNight;
 
-            //var booking = (IQueryable<Booking>)_context.Booking;
-            //var bookIn = new SqliteParama
-            //.FromSqlRaw("SELECT * FROM Booking WHERE Booking.CheckOut <= CheckIn || WHERE CheckOut <= Booking.CheckIn");
+           
 
-            //raw SQL query for bookings to check for interference with booking dates
+            //SQL query for bookings to check for interference with booking dates
             var booking = from b in _context.Booking
                           where (b.CheckIn >= Booking.CheckIn && b.CheckOut <= Booking.CheckOut) ||
-                          (b.CheckIn <= Booking.CheckOut && b.CheckOut >= Booking.CheckIn)
-            select b.RoomID;
+                        (b.CheckIn <= Booking.CheckOut && b.CheckOut >= Booking.CheckIn)
+                          select b.RoomID;
+
 
             if (booking.Contains(Booking.RoomID))
             {
                 status = unavailable;
                 return Page();
             }
-            
+
             _context.Booking.Add(Booking);
             await _context.SaveChangesAsync();
             status = available;
