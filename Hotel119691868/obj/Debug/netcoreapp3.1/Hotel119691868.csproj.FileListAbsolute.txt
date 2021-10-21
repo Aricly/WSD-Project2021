@@ -1435,3 +1435,4 @@ C:\Users\yeliz\Documents\GitHub\WSD-Project2021\Hotel119691868\obj\Debug\netcore
 C:\Users\yeliz\Documents\GitHub\WSD-Project2021\Hotel119691868\obj\Debug\netcoreapp3.1\Hotel119691868.dll
 C:\Users\yeliz\Documents\GitHub\WSD-Project2021\Hotel119691868\obj\Debug\netcoreapp3.1\Hotel119691868.pdb
 C:\Users\yeliz\Documents\GitHub\WSD-Project2021\Hotel119691868\obj\Debug\netcoreapp3.1\Hotel119691868.genruntimeconfig.cache
+C:\Users\yeliz\Documents\GitHub\WSD-Project2021\Hotel119691868\obj\Debug\netcoreapp3.1\Razor\Pages\ManageBookings\Statistics.cshtml.g.cs

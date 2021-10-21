@@ -26,18 +26,14 @@ namespace Hotel119691868.Pages.ManageBookings
 
         public async Task<IActionResult> OnGetAsync()
         {
+
             var statisticsGroups = _context.Customer.GroupBy(m => m.Postcode);
             StatisticsStats = await statisticsGroups.Select(g => new Statistics { Postcode = g.Key, NumberOfCustomer = g.Count() }).ToListAsync();
             var statisticsGroup2 = _context.Room.GroupBy(m => m.ID);
-            StatisticsStats2 = await statisticsGroups.Select(g => new Statistics { RoomID = g.Key, NumberOfBooking = g.Count() }).ToListAsync();
+            StatisticsStats2 = await statisticsGroup2.Select(g => new Statistics { RoomID = g.Key, NumberOfBooking = g.Count() }).ToListAsync();
             return Page();
         }
 
-        /*
-        public void OnGet()
-        {
 
-        }
-        */
     }
 }
