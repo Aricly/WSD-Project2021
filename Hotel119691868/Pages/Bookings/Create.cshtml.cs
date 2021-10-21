@@ -55,16 +55,17 @@ namespace Hotel119691868.Pages.Bookings
 
             int amountOfDays = (int)(Booking.CheckOut - Booking.CheckIn).TotalDays;
             decimal pricePerNight = room.Price;
-            Booking.Cost = amountOfDays * pricePerNight;  
+            Booking.Cost = amountOfDays * pricePerNight;
+
+            //var booking = (IQueryable<Booking>)_context.Booking;
+            //var bookIn = new SqliteParama
+            //.FromSqlRaw("SELECT * FROM Booking WHERE Booking.CheckOut <= CheckIn || WHERE CheckOut <= Booking.CheckIn");
 
             //raw SQL query for bookings to check for interference with booking dates
             var booking = from b in _context.Booking
-                          where 
-                          (b.CheckIn >= Booking.CheckIn && b.CheckOut <= Booking.CheckOut) ||
+                          where (b.CheckIn >= Booking.CheckIn && b.CheckOut <= Booking.CheckOut) ||
                           (b.CheckIn <= Booking.CheckOut && b.CheckOut >= Booking.CheckIn)
-                          //(b.CheckIn >= Booking.CheckIn && b.CheckIn <= Booking.CheckOut) ||
-                          //(b.CheckOut <= Booking.CheckOut && b.CheckOut >= Booking.CheckIn)
-                          select b.RoomID;
+            select b.RoomID;
 
             if (booking.Contains(Booking.RoomID))
             {
