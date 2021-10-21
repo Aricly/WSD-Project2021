@@ -48,7 +48,8 @@
                 @Html.DisplayFor(modelItem => item.TheRoom.Level)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TheCustomer.Email)
+                @Html.DisplayFor(modelItem => item.TheCustomer.GivenName)
+                @Html.DisplayFor(modelItem => item.TheCustomer.Surname)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
