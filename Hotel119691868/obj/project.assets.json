@@ -9189,19 +9189,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\yeliz\\.nuget\\packages\\": {}
+    "C:\\Users\\Aricly\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yeliz\\Documents\\GitHub\\WSD-Project2021\\Hotel119691868\\Hotel119691868.csproj",
+      "projectUniqueName": "F:\\Downloads (F)\\Work\\22041964\\2021T2\\Web Systems Development\\WSD-Project2021\\Hotel119691868\\Hotel119691868.csproj",
       "projectName": "Hotel119691868",
-      "projectPath": "C:\\Users\\yeliz\\Documents\\GitHub\\WSD-Project2021\\Hotel119691868\\Hotel119691868.csproj",
-      "packagesPath": "C:\\Users\\yeliz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yeliz\\Documents\\GitHub\\WSD-Project2021\\Hotel119691868\\obj\\",
+      "projectPath": "F:\\Downloads (F)\\Work\\22041964\\2021T2\\Web Systems Development\\WSD-Project2021\\Hotel119691868\\Hotel119691868.csproj",
+      "packagesPath": "C:\\Users\\Aricly\\.nuget\\packages\\",
+      "outputPath": "F:\\Downloads (F)\\Work\\22041964\\2021T2\\Web Systems Development\\WSD-Project2021\\Hotel119691868\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\yeliz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Aricly\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9276,7 +9276,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

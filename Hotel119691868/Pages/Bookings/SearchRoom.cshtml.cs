@@ -47,15 +47,16 @@ namespace Hotel119691868.Pages.Bookings
             var beds = new SqliteParameter("Beds", Myself.TheRoom.BedCount);
             */
             var booking = from b in _context.Booking
-                          where (b.CheckIn >= Myself.CheckIn && b.CheckOut <= Myself.CheckOut) || (b.CheckIn <= Myself.CheckOut && b.CheckOut >= Myself.CheckIn)
+                          where (Myself.CheckOut <= b.CheckIn || b.CheckOut <= Myself.CheckIn)      /*(b.CheckIn >= Myself.CheckIn && b.CheckOut <= Myself.CheckOut) || (b.CheckIn <= Myself.CheckOut && b.CheckOut >= Myself.CheckIn)*/
                           select b.RoomID;
 
-            /*rooms = _context.Booking.FromSqlRaw("SELECT * FROM Goma.db WHERE RoomID = (SELECT ID FROM Room WHERE BedCount = @Beds) "
+            /*rooms = _context.Booking.FromSqlRaw("SELECT * FROM Booking WHERE RoomID = (SELECT ID FROM Room WHERE BedCount = @Beds) "
                                                 + "AND WHERE @Bookout <= CheckIn OR WHERE CheckOut <= @BookIn", beds, bookOut, bookIn);
             */
-            var rum = new SqliteParameter("Room", booking);
+            var rum = new SqliteParameter("Room", booking.ToString());
             rooms = _context.Room.FromSqlRaw("SELECT * FROM Room WHERE ID = @Room", rum);
             Room = await rooms.ToListAsync();
+
             ViewData["Submitted"] = "True";
             return Page();
         }
