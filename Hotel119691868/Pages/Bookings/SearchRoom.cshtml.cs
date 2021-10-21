@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Hotel119691868.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Data.Sqlite;
@@ -10,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Hotel119691868.Pages.Bookings
 {
+    [Authorize(Roles = "customers")]
     public class SearchRoomModel : PageModel
     {
         private readonly Hotel119691868.Data.ApplicationDbContext _context;

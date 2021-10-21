@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Hotel119691868.Pages.Customers
 {
-    //[Authorize(Roles = "Client, Admin")]
+    [Authorize(Roles = "customers")]
     public class MyDetailsModel : PageModel
     {
         private readonly Hotel119691868.Data.ApplicationDbContext _context;
