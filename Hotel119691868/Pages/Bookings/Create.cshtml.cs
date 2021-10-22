@@ -14,7 +14,7 @@ using Microsoft.Data.Sqlite;
 
 namespace Hotel119691868.Pages.Bookings
 {
-    [Authorize]
+    [Authorize(Roles = "customers")]
     public class CreateModel : PageModel
     {
         public int idle = 0;
@@ -34,7 +34,7 @@ namespace Hotel119691868.Pages.Bookings
         }
 
         [BindProperty]
-        public Booking Booking { get; set; }
+        public BookRoomViewModel Booking { get; set; }
         public int status { get; set; }
 
 
@@ -47,6 +47,8 @@ namespace Hotel119691868.Pages.Bookings
                 return Page();
             }
 
+            Booking bookingInput = new Booking();
+
             string _email = User.FindFirst(ClaimTypes.Name).Value;
             Booking.CustomerEmail = _email;
             Booking booking1 = await _context.Booking.FirstOrDefaultAsync(m => m.CustomerEmail == _email);
@@ -58,13 +60,17 @@ namespace Hotel119691868.Pages.Bookings
             decimal pricePerNight = room.Price;
             Booking.Cost = amountOfDays * pricePerNight;
 
-           
-
-            //SQL query for bookings to check for interference with booking dates
+            //SQL query for bookings to check if booking dates are available
             var booking = from b in _context.Booking
                           where (b.CheckIn >= Booking.CheckIn && b.CheckOut <= Booking.CheckOut) ||
                         (b.CheckIn <= Booking.CheckOut && b.CheckOut >= Booking.CheckIn)
                           select b.RoomID;
+
+            bookingInput.CustomerEmail = booking1.CustomerEmail;
+            bookingInput.RoomID = Booking.RoomID;
+            bookingInput.CheckIn = Booking.CheckIn;
+            bookingInput.CheckOut = Booking.CheckOut;
+            bookingInput.Cost = Booking.Cost;
 
 
             if (booking.Contains(Booking.RoomID))
@@ -73,7 +79,8 @@ namespace Hotel119691868.Pages.Bookings
                 return Page();
             }
 
-            _context.Booking.Add(Booking);
+
+            _context.Booking.Add(bookingInput);
             await _context.SaveChangesAsync();
             status = available;
             ViewData["roomLevel"] = room.Level;
@@ -81,7 +88,6 @@ namespace Hotel119691868.Pages.Bookings
             ViewData["cost"] = Booking.Cost;
             ViewData["in"] = Booking.CheckIn;
             ViewData["out"] = Booking.CheckOut;
-            Booking = new Booking();
             return Page();
         }
     }
