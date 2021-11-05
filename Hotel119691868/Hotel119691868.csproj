@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20210918010553_CreateManageBookings.cs" />
+    <Compile Remove="Data\Migrations\20210918010553_CreateManageBookings.Designer.cs" />
+    <Compile Remove="Data\Migrations\20211021024013_SearchRooms.cs" />
+    <Compile Remove="Data\Migrations\20211021024013_SearchRooms.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.16" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.15" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.15" />

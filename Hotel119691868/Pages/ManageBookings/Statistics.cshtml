@@ -1,0 +1,64 @@
+@page
+@model Hotel119691868.Pages.ManageBookings.StatisticsModel
+@{
+    
+        ViewData["Title"] = "Statistics";
+        Layout = "~/Pages/Shared/_Layout.cshtml";
+    
+}
+<h2>Customer distribution with respect to postcodes</h2>
+<br />
+
+<div>
+    @* .table is a Bootstrap class giving table styles *@
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(m => m.StatisticsStats[0].Postcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.StatisticsStats[0].NumberOfCustomer)
+            </th>
+        </tr>
+
+        @foreach (var item in Model.StatisticsStats)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Postcode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfCustomer)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<h2>Booking distribution with respect to rooms</h2>
+<br />
+
+<div>
+    @* .table is a Bootstrap class giving table styles *@
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(m => m.StatisticsStats2[0].RoomID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.StatisticsStats2[0].NumberOfBooking)
+            </th>
+        </tr>
+
+        @foreach (var item in Model.StatisticsStats2)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfBooking)
+                </td>
+            </tr>
+        }
+    </table>
+</div>

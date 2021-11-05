@@ -29,16 +29,16 @@
                         @if (User.IsInRole("customers"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/MyDetails">My Details</a>
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Customers/MyDetails">My Details</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/SearchRooms">Search Rooms</a>
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Bookings/SearchRoom">Search Rooms</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/BookRoom">Book A Room</a>
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Bookings/Create">Book A Room</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Bookings">My Bookings</a>
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Bookings/Index">My Bookings</a>
                             </li>
                         }
                         @if (User.IsInRole("administrators"))
@@ -47,7 +47,7 @@
                                 <a class="nav-link text-dark" asp-area="" asp-page="/ManageBookings/Index">Manage Bookings</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Statistics/Index">Statistics</a>
+                                <a class="nav-link text-dark" asp-area="" asp-page="/ManageBookings/Statistics">Statistics</a>
                             </li>
                         }
 
